@@ -1,0 +1,17 @@
+/api/v1/survey/fields/s/ --sleep events
+/api/v1/survey/fields/e/ --mood events
+/api/v1/survey/fields/a/ -- returns json list of agitation events
+
+/api/v1/survey/caregiverdaily/submit --push new daily
+/api/v1/survey/caregiverdaily/user-pk/d/pk/ -- select by pk
+/api/v1/survey/caregiverdaily/user-pk/ -- list all from deployment
+/api/v1/survey/caregiverdaily/user-pk/yyyy/mm/dd -- list all from deployment date
+/api/v1/survey/caregiverdaily/user-pk/yyyy/mm -- list all from deployment month
+/api/v1/survey/caregiverdaily/user-pk/yyyy -- list all from deployment year
+
+/api/v1/survey/agisurvey/submit -- push new survey
+/api/v1/survey/agisurvey/user-pk/d/pk/ --select by pk
+/api/v1/survey/agisurvey/user-pk/ -- get all
+/api/v1/survey/agisurvey/user-pk/yyyy/mm/dd/ --select by date
+/api/v1/survey/agisurvey/user-pk/yyyy/mm/ --select by month
+/api/v1/survey/agisurvey/user-pk/yyyy/ --select by year

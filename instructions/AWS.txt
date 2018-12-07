@@ -1,0 +1,25 @@
+inertia_besi@gmail.com
+2018UVAinertia
+
+inertia_NuttaHomdee
+https://221912276838.signin.aws.amazon.com/console
+
+Launch Instant
+Ubuntu 14
+Create new key permission
+
+ssh -i key.pem ubuntu@IP.ADDRESS
+	sudo apt-get update 
+	sudo apt-get install git
+	git clone https://gitlab.com/besi/tablet-backend.git
+*****run env django
+
+***security group
+
+nginx
+	sudo apt-get install nginx
+
+
+
+
+
