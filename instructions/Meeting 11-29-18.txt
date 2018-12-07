@@ -1,8 +1,0 @@
-django server:
-	$ source env/bin/activate
-	$ cd besi_tablet_backend/
-	$ python3 manage.py createsuperuser
-		create user
-
-for database:
-	$python3 manage.py migrate*** -> this should create db.sqlite3
