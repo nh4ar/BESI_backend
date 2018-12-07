@@ -1,9 +1,5 @@
 # Django Backend to Support the Tablet Application
 
-## Benjamin Ghaemmaghami, Neeraj Gandhi, and John Park
-
-### Current Maintainer: 
-
 # Development Installation
 **These install guidelines assume you are using
 an up-to-date OS with Python 3.5, GNU Make, and git installed**
