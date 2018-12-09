@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'api_v1',
     'survey',
     'memento',
-    'athena'
+    'athena',
+    'interventions'
 ]
 
 MIDDLEWARE_CLASSES = [

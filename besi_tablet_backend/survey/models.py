@@ -137,12 +137,12 @@ class CaregiverDailySurvey(models.Model):
 	PWDEmotions = models.OneToOneField(EmotionSubsurvey, related_name="PWDEmotionSubsurvey")
 	PWDSleepEvents = models.OneToOneField(SleepSubsurvey, related_name="PWDSleepSubsurvey")
 
-class Intervention(models.Model):
-	deployment = models.ForeignKey(User)
-	value = models.CharField(max_length=64)
+# class Intervention(models.Model):
+# 	deployment = models.ForeignKey(User)
+# 	value = models.CharField(max_length=300)
 
-	def __str__(self):
-		return self.value
+# 	def __str__(self):
+# 		return self.value
 
-	class Meta:
-		verbose_name_plural = "interventions"
+# 	class Meta:
+# 		verbose_name_plural = "interventions"

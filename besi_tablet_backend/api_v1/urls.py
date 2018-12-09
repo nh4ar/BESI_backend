@@ -2,6 +2,7 @@ from django.conf.urls import url
 from survey import views as s_view
 from memento import views as m_view
 from athena import views as athena_view
+from interventions import views as intervention_view
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = format_suffix_patterns([
@@ -40,15 +41,17 @@ urlpatterns = format_suffix_patterns([
     url(r'^survey/daily/(?P<username>\w+)/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/$', s_view.CaregiverDailySurveyListForDeployment.as_view(), name='cgiver-daily-survey-yy-mm'),
     url(r'^survey/daily/(?P<username>\w+)/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/(?P<day>[0-9]{1,2})/$', s_view.CaregiverDailySurveyListForDeployment.as_view(), name='cgiver-daily-survey-yy-mm-dd'),
 
-    url(r'^survey/intervention/create/$', s_view.SmartInterventionList.as_view(), name='smart-intervention-list'),
-
     url(r'^memento/e/smart/$', m_view.SmartEventList.as_view(), name='smart-event-list' ),
     url(r'^memento/e/(?P<pk>\d+)/$', m_view.EventDetailUpdate.as_view(), name='smart-event-list' ),
 
     url(r'^athena/types/$', athena_view.NotifyTypeList.as_view(), name='notify-type-list'),
     url(r'^athena/fireid/smart/$', athena_view.FireIDUpdate.as_view(), name='fire-id-update'),
-    url(r'^athena/notify/smart/$', athena_view.SmartNotificationList.as_view(), name='smart-notification-list')
+    url(r'^athena/notify/smart/$', athena_view.SmartNotificationList.as_view(), name='smart-notification-list'),
 
     #url(r'^survey/notif/smart$', s_view.SmartAgitationSurveyList.as_view(), name='smart-notif-survey-list'),
     #url(r'^survey/notif/create/$', s_view.AgitationSurveyCreate.as_view(), name='notif-survey-create'),
+
+    ##### INTERVENTION #####
+    # url(r'^interventions/intervention/create/$', s_view.SmartInterventionList.as_view(), name='smart-intervention-list'),
+    url(r'^interventions/intervention/create/$', intervention_view.SmartInterventionList.as_view(), name='smart-intervention-list')
 ])

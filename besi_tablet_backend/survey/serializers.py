@@ -104,10 +104,10 @@ class CaregiverDailySurveySerializer(serializers.Serializer):
 		"""
 		return CaregiverDailySurvey.objects.create(**validated_data)
 
-class InterventionSerializer(serializers.Serializer):
-	pk = serializers.IntegerField(read_only=True)
-	deployment = serializers.ReadOnlyField(source='deployment.username')
-	value = serializers.CharField()
+# class InterventionSerializer(serializers.Serializer):
+# 	pk = serializers.IntegerField(read_only=True)
+# 	deployment = serializers.ReadOnlyField(source='deployment.username')
+# 	value = serializers.CharField()
 
-	def create(self, validated_data):
-		return Intervention.objects.create(**validated_data)
+# 	def create(self, validated_data):
+# 		return Intervention.objects.create(**validated_data)

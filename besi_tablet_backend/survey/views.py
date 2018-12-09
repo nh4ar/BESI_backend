@@ -40,18 +40,18 @@ class SmartActivityList(generics.ListCreateAPIView):
 	def perform_create(self, serializer):
 		serializer.save(deployment=self.request.user)
 
-class SmartInterventionList(generics.ListCreateAPIView):
-	"""
-	View to list all activities of the current deployment
-	"""
-	serializer_class = InterventionSerializer
-	permission_classes = (IsAuthenticated,)
+# class SmartInterventionList(generics.ListCreateAPIView):
+# 	"""
+# 	View to list all activities of the current deployment
+# 	"""
+# 	serializer_class = InterventionSerializer
+# 	permission_classes = (IsAuthenticated,)
 
-	def get_queryset(self):
-		return Intervention.objects.filter(deployment=self.request.user)
+# 	def get_queryset(self):
+# 		return Intervention.objects.filter(deployment=self.request.user)
 
-	def perform_create(self, serializer):
-		serializer.save(deployment=self.request.user)
+# 	def perform_create(self, serializer):
+# 		serializer.save(deployment=self.request.user)
 
 
 
