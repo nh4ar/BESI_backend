@@ -13,7 +13,7 @@ class InterventionList(models.Model):
 
 
 class InterventionUsageSurvey(models.Model):
-	deployment = models.ForeignKey(User)
+	deployment = models.ForeignKey(User,blank=True, null=True)
 	timestamp = models.DateTimeField(blank=False)
 	Intervention1 = models.BooleanField(default=False)
 	value1 = models.CharField(max_length=300, default='NA')
@@ -28,7 +28,7 @@ class InterventionUsageSurvey(models.Model):
 		return str(self.deployment) + "@"  +str(self.timestamp)
 
 class InterventionRatingSurvey(models.Model):
-	deployment = models.ForeignKey(User)
+	deployment = models.ForeignKey(User,blank=True, null=True)
 	timestamp = models.DateTimeField(blank=False)
 	Rating1 = models.IntegerField(default=0)
 	value1 = models.CharField(max_length=300, default='NA')
