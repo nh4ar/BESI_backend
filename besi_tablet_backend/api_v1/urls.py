@@ -54,5 +54,6 @@ urlpatterns = format_suffix_patterns([
     ##### INTERVENTION #####
     # url(r'^interventions/intervention/create/$', s_view.SmartInterventionList.as_view(), name='smart-intervention-list'),
     url(r'^interventions/intervention/create/$', intervention_view.SmartInterventionList.as_view(), name='smart-intervention-list'),
-    url(r'^interventions/intervention-usage/create/$', intervention_view.SmartInterventionUsageSubsurveyCreate.as_view(), name='smart-intervention-usage')
+    url(r'^interventions/intervention-usage/create/$', intervention_view.SmartInterventionUsageSubsurveyCreate.as_view(), name='smart-intervention-usage'),
+    url(r'^interventions/intervention-rating/create/$', intervention_view.SmartInterventionRatingSubsurveyCreate.as_view(), name='smart-intervention-rating')
 ])

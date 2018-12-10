@@ -27,5 +27,20 @@ class InterventionUsageSurvey(models.Model):
 	def __str__(self):
 		return str(self.deployment) + "@"  +str(self.timestamp)
 
+class InterventionRatingSurvey(models.Model):
+	deployment = models.ForeignKey(User)
+	timestamp = models.DateTimeField(blank=False)
+	Rating1 = models.IntegerField(default=0)
+	value1 = models.CharField(max_length=300, default='NA')
+	Rating2 = models.IntegerField(default=0)
+	value2 = models.CharField(max_length=300, default='NA')
+	Rating3 = models.IntegerField(default=0)
+	value3 = models.CharField(max_length=300, default='NA')
+	Rating4 = models.IntegerField(default=0)
+	value4 = models.CharField(max_length=300, default='NA')
+
+	def __str__(self):
+		return str(self.deployment) + "@"  +str(self.timestamp)
+
 
 

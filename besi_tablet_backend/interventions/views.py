@@ -20,3 +20,11 @@ class SmartInterventionList(generics.ListCreateAPIView):
 class SmartInterventionUsageSubsurveyCreate(generics.CreateAPIView):
 	serializer_class = InterventionUsageSurveySerializer
 	permission_classes = (IsAuthenticated,)
+
+class SmartInterventionRatingSubsurveyCreate(generics.CreateAPIView):
+	serializer_class = InterventionRatingSurveySerializer
+	permission_classes = (IsAuthenticated,)
+	def get_queryset(self):
+		return InterventionRatingSurvey.objects.filter(deployment=self.request.user)
+	def perform_create(self, serializer):
+		serializer.save(deployment=self.request.user)

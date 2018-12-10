@@ -1,6 +1,8 @@
 from django.contrib import admin
 from interventions.models import *
 
+# Register your models here.
 admin.site.register(InterventionList)
 admin.site.register(InterventionUsageSurvey)
-# Register your models here.
+admin.site.register(InterventionRatingSurvey)
+
