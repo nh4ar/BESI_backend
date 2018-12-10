@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
-from interventions.models import InterventionList
-from interventions.serializers import InterventionSerializer
+from interventions.models import *
+from interventions.serializers import *
 from rest_framework.permissions import IsAuthenticated
 
 class SmartInterventionList(generics.ListCreateAPIView):
@@ -17,3 +17,6 @@ class SmartInterventionList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(deployment=self.request.user)
 
+class SmartInterventionUsageSubsurveyCreate(generics.CreateAPIView):
+	serializer_class = InterventionUsageSurveySerializer
+	permission_classes = (IsAuthenticated,)

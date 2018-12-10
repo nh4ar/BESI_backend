@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from interventions.models import InterventionList
+from interventions.models import *
 
 class InterventionSerializer(serializers.Serializer):
     pk = serializers.IntegerField(read_only=True)
@@ -9,3 +9,9 @@ class InterventionSerializer(serializers.Serializer):
     def create(self, validated_data):
         return InterventionList.objects.create(**validated_data)
 
+class InterventionUsageSurveySerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = InterventionUsageSurvey
+
+		
