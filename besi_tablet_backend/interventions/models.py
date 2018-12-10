@@ -13,7 +13,7 @@ class InterventionList(models.Model):
 
 
 class InterventionUsageSurvey(models.Model):
-	deployment = models.ForeignKey(User,blank=True, null=True)
+	deployment = models.ForeignKey(User)
 	timestamp = models.DateTimeField(blank=False)
 	Intervention1 = models.BooleanField(default=False)
 	value1 = models.CharField(max_length=300, default='NA')
