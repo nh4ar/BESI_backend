@@ -10,7 +10,7 @@ class InterventionSerializer(serializers.Serializer):
         return InterventionList.objects.create(**validated_data)
 
 class InterventionUsageSurveySerializer(serializers.ModelSerializer):
-	deployment = serializers.ReadOnlyField(source='deployment.username')
+	deployment = serializers.ReadOnlyField(source='deployment.username', required=False)
 	timestamp = serializers.DateTimeField(required=True)
 	Intervention1 = serializers.IntegerField(required=True)
 	value1 = serializers.CharField(required=True)
@@ -28,7 +28,7 @@ class InterventionUsageSurveySerializer(serializers.ModelSerializer):
 		return InterventionUsageSurvey.objects.create(**validated_data)
 
 class InterventionRatingSurveySerializer(serializers.ModelSerializer):
-	deployment = serializers.ReadOnlyField(source='deployment.username')
+	deployment = serializers.ReadOnlyField(source='deployment.username', required=False)
 	timestamp = serializers.DateTimeField(required=True)
 	Rating1 = serializers.IntegerField(required=True)
 	value1 = serializers.CharField(required=True)
